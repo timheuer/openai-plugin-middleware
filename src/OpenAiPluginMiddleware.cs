@@ -8,9 +8,6 @@ public class OpenAiPluginMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly AiPluginOptions _options;
-    private readonly LinkGenerator _linkGenerator;
-    private readonly EndpointDataSource _endpointDataSource;
-
 
     public OpenAiPluginMiddleware(RequestDelegate next,
                                   IOptions<AiPluginOptions> options)
@@ -37,7 +34,7 @@ public class OpenAiPluginMiddleware
             if (!string.IsNullOrEmpty(_options.RelativeLogoUrl)) _options.LogoUrl = $"{_options.BaseUri}{_options.RelativeLogoUrl}";
 
             context.Response.ContentType = "application/json";
-            await JsonSerializer.SerializeAsync(context.Response.Body, _options);
+            await JsonSerializer.SerializeAsync(context.Response.Body, _options, new JsonSerializerOptions() {  DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull });
         }
         else
         {

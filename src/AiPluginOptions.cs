@@ -20,11 +20,12 @@ public class AiPluginOptions
     public Api ApiDefinition { get; set; } = new();
     [JsonPropertyName("logo_url")]
     public string LogoUrl { get; set; }
+    [JsonIgnore]
+    public string RelativeLogoUrl { get; set; } = "/logo.png";
     [JsonPropertyName("contact_email")]
     public string ContactEmail { get; set; }
     [JsonPropertyName("legal_info_url")]
     public string LegalInfoUrl { get; set; }
-
     [JsonIgnore]
     public string BaseUri { get; set; }
 }

@@ -11,7 +11,7 @@
 		<PackageProjectUrl>https://github.com/timheuer/openai-plugin-middleware</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/timheuer/openai-plugin-middleware</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<PackageReleaseNotes>Added more auth schema support</PackageReleaseNotes>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageIcon>icon.png</PackageIcon>

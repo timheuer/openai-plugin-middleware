@@ -16,7 +16,7 @@ jobs:
       DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true
       TERM: xterm
       PROJECT_PATH: src/OpenAIPluginMiddleware.csproj
-      TEST_PATH: test/SchemaTests.csproj
+      TEST_PATH: tests
     outputs:
       version: ${{ steps.set_proj_version.outputs.PKG_VERSION }}
       relnotes: ${{ steps.set_proj_version.outputs.RELNOTES }}

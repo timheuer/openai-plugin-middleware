@@ -54,6 +54,7 @@ public class Authentication
     public Dictionary<string,string>? VerificationTokens { get; set; }
 }
 
+[JsonConverter(typeof(JsonStringEnumMemberConverter))]
 public enum AuthenticationType
 {
     [EnumMember(Value = "none")]
@@ -66,6 +67,7 @@ public enum AuthenticationType
     OAuth 
 }
 
+[JsonConverter(typeof(JsonStringEnumMemberConverter))]
 public enum AuthorizationType
 {
     [EnumMember(Value = "bearer")]

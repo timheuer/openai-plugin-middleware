@@ -39,7 +39,7 @@ jobs:
       run: dotnet restore ${{ env.PROJECT_PATH }}
 
     - name: 🏗️ Build
-      run: dotnet build ${{ env.PROJECT_PATH }}--configuration Release --no-restore
+      run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
 
     - name: 💼 Pack
       run: dotnet pack ${{ env.PROJECT_PATH }} --configuration Release -o finalpackage --no-build

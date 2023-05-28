@@ -1,0 +1,1 @@
+# OpenAI Plugin manifest middleware for ASP.NET Core

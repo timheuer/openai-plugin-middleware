@@ -4,10 +4,36 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<PackageId>TimHeuer.OpenAIPluginMiddleware</PackageId>
+		<Title>OpenAI Plugin manifest middleware</Title>
+		<Authors>Tim Heuer</Authors>
+		<Description>ASP.NET Core middleware component to help in generating/responding to the well-known request for an OpenAI plugin</Description>
+		<PackageProjectUrl>https://github.com/timheuer/openai-plugin-middleware</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/timheuer/openai-plugin-middleware</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Include="..\icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">

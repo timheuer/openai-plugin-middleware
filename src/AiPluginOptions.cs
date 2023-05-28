@@ -9,25 +9,25 @@ public class AiPluginOptions
     [JsonPropertyName("schema_version")]
     public string SchemaVersion { get; set; } = "v1";
     [JsonPropertyName("name_for_model")]
-    public string NameForModel { get; set; }
+    public required string NameForModel { get; set; }
     [JsonPropertyName("name_for_human")]
-    public string NameForHuman { get; set; }
+    public required string NameForHuman { get; set; }
     [JsonPropertyName("description_for_model")]
-    public string DescriptionForModel { get; set; }
+    public required string DescriptionForModel { get; set; }
     [JsonPropertyName("description_for_human")]
-    public string DescriptionForHuman { get; set; }
+    public required string DescriptionForHuman { get; set; }
     [JsonPropertyName("auth")]
     public Authentication Auth { get; set; } = new();
     [JsonPropertyName("api")]
     public Api ApiDefinition { get; set; } = new();
     [JsonPropertyName("logo_url")]
-    public string LogoUrl { get; set; }
+    public required string LogoUrl { get; set; }
     [JsonIgnore]
     public string RelativeLogoUrl { get; set; } = "/logo.png";
     [JsonPropertyName("contact_email")]
-    public string ContactEmail { get; set; }
+    public required string ContactEmail { get; set; }
     [JsonPropertyName("legal_info_url")]
-    public string LegalInfoUrl { get; set; }
+    public required string LegalInfoUrl { get; set; }
     [JsonIgnore]
     public string? BaseUri { get; set; }
 }

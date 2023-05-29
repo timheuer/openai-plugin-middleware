@@ -7,18 +7,37 @@ public class AiPluginOptions
 {
     [JsonPropertyName("schema_version")]
     public string SchemaVersion { get; set; } = "v1";
+    /// <summary>
+    /// The model name cannot exceed 50 characters
+    /// </summary>
     [JsonPropertyName("name_for_model")]
     public required string NameForModel { get; set; }
+
+    /// <summary>
+    /// The human name cannot exceed 20 characters
+    /// </summary>
     [JsonPropertyName("name_for_human")]
     public required string NameForHuman { get; set; }
+    
+    /// <summary>
+    /// The model description cannot exceed 8000 characters
+    /// </summary>
     [JsonPropertyName("description_for_model")]
     public required string DescriptionForModel { get; set; }
+    
+    /// <summary>
+    /// The human description cannot exceed 100 characters
+    /// </summary>
     [JsonPropertyName("description_for_human")]
     public required string DescriptionForHuman { get; set; }
     [JsonPropertyName("auth")]
     public Authentication Auth { get; set; } = new();
     [JsonPropertyName("api")]
     public Api ApiDefinition { get; set; } = new();
+    
+    /// <summary>
+    /// Suggested logo is a 512x512 png.
+    /// </summary>
     [JsonPropertyName("logo_url")]
     public required string LogoUrl { get; set; }
     [JsonIgnore]

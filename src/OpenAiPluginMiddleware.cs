@@ -7,15 +7,17 @@ public class OpenAiPluginMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly AiPluginOptions _options;
+    private readonly HttpClient _client;
 
     public OpenAiPluginMiddleware(RequestDelegate next,
                                   IOptions<AiPluginOptions> options)
     {
         _next = next;
         _options = options.Value;
+        _client = new HttpClient();
     }
 
-    public async Task Invoke(HttpContext context)
+    public async Task InvokeAsync(HttpContext context)
     {
         if (context.Request.Method != "GET")
         {

@@ -1,5 +1,5 @@
 [![TimHeuer.OpenAIPluginMiddleware](https://img.shields.io/nuget/v/TimHeuer.OpenAIPluginMiddleware.svg)](https://www.nuget.org/packages/TimHeuer.OpenAIPluginMiddleware)
-![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/timheuer/openai-plugin-middleware/release.yaml?branch=main)
+[![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/timheuer/openai-plugin-middleware/release.yaml?branch=main)](https://github.com/timheuer/openai-plugin-middleware/actions/workflows/release.yaml)
 
 # OpenAI Plugin manifest middleware for ASP.NET Core
 This is a middleware for ASP.NET Core that will add a manifest file to the response for 

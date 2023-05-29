@@ -5,7 +5,7 @@ namespace SchemaTests;
 public class EnumSerializationTests
 {
     [Fact]
-    public void AuthenticationTypeEnumTest()
+    public void Authentication_Enum_Values_Valid()
     {
         string json = JsonSerializer.Serialize(OpenAIPluginMiddleware.AuthenticationType.ServiceHttp);
         Assert.Equal("\"service_http\"", json);
@@ -21,7 +21,7 @@ public class EnumSerializationTests
     }
 
     [Fact]
-    public void AuthorizationTypeEnumTest()
+    public void Authorization_Enum_Values_Valid()
     {
         string json = JsonSerializer.Serialize(OpenAIPluginMiddleware.AuthorizationType.Bearer);
         Assert.Equal("\"bearer\"", json);

@@ -1,5 +1,4 @@
-﻿using System.Collections.Specialized;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace OpenAIPluginMiddleware;

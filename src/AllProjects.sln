@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaTests", "..\tests\SchemaTests\SchemaTests.csproj", "{721E52FD-9061-4A54-9565-7EC908EB2E09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleOpenAIPlugin", "..\sample\SampleOpenAIPlugin\SampleOpenAIPlugin.csproj", "{C5CAD29B-C331-4918-B75F-BB67DCC45BA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAIPluginMiddleware", "OpenAIPluginMiddleware.csproj", "{57DC3834-93F4-4E43-9D57-6FC13B8C757D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{721E52FD-9061-4A54-9565-7EC908EB2E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721E52FD-9061-4A54-9565-7EC908EB2E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721E52FD-9061-4A54-9565-7EC908EB2E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721E52FD-9061-4A54-9565-7EC908EB2E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5CAD29B-C331-4918-B75F-BB67DCC45BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5CAD29B-C331-4918-B75F-BB67DCC45BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5CAD29B-C331-4918-B75F-BB67DCC45BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5CAD29B-C331-4918-B75F-BB67DCC45BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57DC3834-93F4-4E43-9D57-6FC13B8C757D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57DC3834-93F4-4E43-9D57-6FC13B8C757D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57DC3834-93F4-4E43-9D57-6FC13B8C757D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57DC3834-93F4-4E43-9D57-6FC13B8C757D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

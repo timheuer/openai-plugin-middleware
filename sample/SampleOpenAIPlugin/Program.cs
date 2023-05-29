@@ -1,11 +1,17 @@
-using OpenAIPluginMiddleware;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSwaggerGen(options =>
+{
+    var httpContextAccessor = builder.Services.BuildServiceProvider().GetRequiredService<IHttpContextAccessor>();
+    var request = httpContextAccessor?.HttpContext?.Request;
+    var url = $"{request?.Scheme}://{request?.Host.Value}";
+    options.AddServer(new Microsoft.OpenApi.Models.OpenApiServer() { Url = url });
+});
+
 builder.Services.AddAiPluginGen(options =>
 {
     options.NameForHuman = "Weather Forecast";
@@ -15,7 +21,7 @@ builder.Services.AddAiPluginGen(options =>
     options.LogoUrl = "https://example.com/logo.png";
     options.DescriptionForHuman = "Search for weather forecasts";
     options.DescriptionForModel = "Plugin for searching the weather forecast. Use It whenever a users asks about weather or forecasts";
-    options.ApiDefinition = new Api() { RelativeUrl = "/swagger/v1/swagger.yaml" };
+    options.ApiDefinition = new() { RelativeUrl = "/swagger/v1/swagger.yaml" };
 });
 var app = builder.Build();
 
@@ -54,3 +60,5 @@ internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+public partial class Program { }

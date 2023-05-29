@@ -45,7 +45,7 @@ jobs:
       run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
 
     - name: 🧪 Test
-      run: dotnet test ${{ env.TEST_PATH }}
+      run: dotnet test ${{ env.TEST_PATH }} --logger "GitHubActions;summary.includePassedTests=true;summary.includeSkippedTests=true"
 
     - name: 💼 Pack
       run: dotnet pack ${{ env.PROJECT_PATH }} --configuration Release -o finalpackage --no-build

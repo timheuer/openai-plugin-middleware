@@ -20,8 +20,6 @@ jobs:
     outputs:
       version: ${{ steps.set_proj_version.outputs.PKG_VERSION }}
       relnotes: ${{ steps.set_proj_version.outputs.RELNOTES }}
-    permissions:
-      contents: write
 
     steps:
     - uses: actions/checkout@v3

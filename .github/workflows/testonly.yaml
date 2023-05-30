@@ -1,0 +1,38 @@
+﻿name: "Test only"
+
+on: workflow_dispatch
+      
+jobs:
+  build:
+    name: Build 
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+      DOTNET_NOLOGO: true
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+      DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+      DOTNET_MULTILEVEL_LOOKUP: 0
+      DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true
+      TERM: xterm
+      PROJECT_PATH: src/OpenAIPluginMiddleware.csproj
+      TEST_PATH: tests
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+      
+    - name: 🧰 Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+
+    - name: ♻️ Restore
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 🏗️ Build
+      run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
+
+    - name: 🧪 Test
+      run: dotnet test ${{ env.TEST_PATH }} --logger "GitHubActions;summary.includePassedTests=true;summary.includeSkippedTests=true"

@@ -49,14 +49,35 @@ public class AppTests
         var response = await client.GetFromJsonAsync<OpenAIPluginMiddleware.AiPluginOptions>(WELLKNOWN_URI);
         Assert.IsNotNull(response?.ContactEmail);
     }
-
+    
     [TestMethod]
-    public async Task Description_Not_Too_Long()
+    public async Task DescriptionForHuman_Not_Too_Long()
     {
         var factory = new SampleOpenAIPluginApp();
         var client = factory.CreateClient();
         var response = await client.GetFromJsonAsync<OpenAIPluginMiddleware.AiPluginOptions>(WELLKNOWN_URI);
-        Assert.IsTrue(response?.DescriptionForHuman.Length < 101);
+        Console.WriteLine(response?.DescriptionForHuman.Length.ToString());
+        Assert.IsTrue(response?.DescriptionForHuman.Length <= 100);
+    }
+
+    [TestMethod]
+    public async Task DescriptionForModel_Not_Too_Long()
+    {
+        var factory = new SampleOpenAIPluginApp();
+        var client = factory.CreateClient();
+        var response = await client.GetFromJsonAsync<OpenAIPluginMiddleware.AiPluginOptions>(WELLKNOWN_URI);
+        Console.WriteLine(response?.DescriptionForModel.Length.ToString());
+        Assert.IsTrue(response?.DescriptionForModel.Length <= 8000);
+    }
+
+    [TestMethod]
+    public async Task NameForModel_Not_Too_Long()
+    {
+        var factory = new SampleOpenAIPluginApp();
+        var client = factory.CreateClient();
+        var response = await client.GetFromJsonAsync<OpenAIPluginMiddleware.AiPluginOptions>(WELLKNOWN_URI);
+        Console.WriteLine(response?.NameForModel.Length.ToString());
+        Assert.IsTrue(response?.NameForModel.Length <= 50);
     }
 
     [TestMethod]

@@ -40,7 +40,7 @@ public class OpenAiPluginMiddleware
                 }
 
                 // if the logo relative url is set use base 
-                if (!string.IsNullOrEmpty(_options.RelativeLogoUrl)) _options.LogoUrl = $"{_options.BaseUri}{_options.RelativeLogoUrl}";
+                if (!string.IsNullOrEmpty(_options.RelativeLogoUrl) && string.IsNullOrEmpty(_options.LogoUrl)) _options.LogoUrl = $"{_options.BaseUri}{_options.RelativeLogoUrl}";
 
                 context.Response.ContentType = "application/json";
                 await JsonSerializer.SerializeAsync(context.Response.Body, _options, new JsonSerializerOptions() { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull });

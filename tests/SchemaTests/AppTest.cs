@@ -55,6 +55,18 @@ public class AppTests
     }
 
     [TestMethod]
+    public void Default_For_Legal()
+    {
+        Assert.AreEqual("https://example.com/legal", response?.LegalInfoUrl);
+    }
+
+    [TestMethod]
+    public void Default_For_ContactEmail()
+    {
+        Assert.AreEqual("no-reply@example.com", response?.ContactEmail);
+    }
+
+    [TestMethod]
     public void DescriptionForModel_Not_Too_Long()
     {
         Console.WriteLine(response?.DescriptionForModel.Length.ToString());

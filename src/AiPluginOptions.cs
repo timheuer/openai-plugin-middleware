@@ -43,9 +43,9 @@ public class AiPluginOptions
     [JsonIgnore]
     public string RelativeLogoUrl { get; set; } = "/logo.png";
     [JsonPropertyName("contact_email")]
-    public required string ContactEmail { get; set; }
+    public required string ContactEmail { get; set; } = "no-reply@example.com";
     [JsonPropertyName("legal_info_url")]
-    public required string LegalInfoUrl { get; set; }
+    public required string LegalInfoUrl { get; set; } = "https://example.com/legal";
     [JsonIgnore]
     public string? BaseUri { get; set; }
 }
@@ -103,5 +103,5 @@ public class Api
     [JsonPropertyName("url")]
     public string? Url { get;  set; }
     [JsonIgnore] 
-    public string? RelativeUrl { get; set; } = "/openapi.yaml";
+    public string? RelativeUrl { get; set; } = "/swagger/v1/swagger.yaml";
 }
